@@ -1,5 +1,5 @@
 <?php
-include "koneksi.php";
+include "koneksi1.php";
 ?>
 
 <!DOCTYPE html>
@@ -8,8 +8,8 @@ include "koneksi.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Penyewaan Mobil</title>
-    <!-- <link rel="stylesheet" href="booking.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"> -->
+    <link rel="stylesheet" href="booking.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
     <!-- Navbar/Header -->
@@ -33,15 +33,18 @@ include "koneksi.php";
       <strong>Car Rental Without Driver</strong>
     </div>
   </div>
-  <div>
+  
+  <div class="car-card img">
     <?php
-    $query = "SELECT * FROM mobil LIMIT 3";
+    $query = "SELECT * FROM mobil ";
     $result = mysqli_query($koneksi, $query);
 
     while ($row = mysqli_fetch_assoc($result)) {
-      echo '<h3>' . $row['merk'] . '</h3>';
+      echo '<img src="assets/img/' . $row['gambar_mobil'] . '"alt=mobil">';
+      echo '<h3>' . $row['nama'] . '</h3>';
       echo '<h3>' . $row['harga_sewa'] . '</h3>';
-      // echo '<h3>' . $row[''] . '</h3>';
+      echo '<h3>' . $row['jenis_transmisi'] . '</h3>';
+      echo '<h3>' . $row['jumlah_kursi'] . '</h3>';  
     }
     ?>
   </div>

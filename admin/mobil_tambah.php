@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     Harga_sewa: <input type="number" name="harga_sewa"> <br>
     Status:
     <select name="status" id="">
-        <option value="tersedia">Tersedia</option>
-        <option value="disewa">Disewa</option>
+        <option value="Manual">Manual</option>
+        <option value="Automatic">Automatic</option>
     </select>
 </form>

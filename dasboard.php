@@ -1,3 +1,8 @@
+<?php
+include "koneksi1.php";
+
+?> 
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -5,6 +10,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="dasboard.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        ul {
+            list-style-type: none;
+        }
+    </style>
+    
 </head>
     <title>Sewa Mobil</title>
 </head>
@@ -36,7 +47,7 @@
         <a href="#">Home</a>
       </div>
       <div class="right-nav">
-        <a href="#">BOOKINGS</a>
+        <a href="booking.php">BOOKINGS</a>
         <a href="#"><strong>DAFTAR</strong></a>
         <button class="profile-btn">Bagas <i class="fa-solid fa-user"></i></button>
       </div>
@@ -75,6 +86,22 @@
     </form>
   </div>
 
+        <!-- rekomendasi  -->
+
+        <div class="car-card img">
+    <?php
+    $query = "SELECT * FROM mobil ";
+    $result = mysqli_query($koneksi, $query);
+
+    while ($row = mysqli_fetch_assoc($result)) {
+      echo '<img src="assets/img/' . $row['gambar_mobil'] . '"alt=mobil">';
+      echo '<h3>' . $row['nama'] . '</h3>';
+      echo '<h3>' . $row['harga_sewa'] . '</h3>';
+      echo '<h3>' . $row['jenis_transmisi'] . '</h3>';
+      echo '<h3>' . $row['jumlah_kursi'] . '</h3>';  
+    }
+    ?>
+  </div>
 
     <section class="recommendation">
         <h2>Rekomendasi Mobil</h2>
@@ -98,7 +125,7 @@
         </div>
     </section>
     
-    <footer>
+    <!-- <footer>
         <div class="footer-content">
             <div class="section">
                 <h4>Follow us on</h4>
@@ -116,15 +143,17 @@
                     <li>Kategori</li>
                 </ul>
             </div>
+
             <div class="section">
                 <h4>Contact</h4>
                 <ul>
-                    <li>Partnership</li>
+                    <li><i class="fas fa-map-maker-alt"></i>Purbalingga</li>
                     <li>+62 123-4567-890</li>
                     <li>example@domain.com</li>
                 </ul>
             </div>
         </div>
+
         <div class="footer-bottom">
             <p>Copyright © 2025 Bagas-Yasykur</p>
             <div class="app-links">
@@ -132,6 +161,48 @@
                 <a href="#">Download on the App Store</a>
             </div>
         </div>
-    </footer>
+    </footer> -->
+    <footer class="footer">
+        <div class="footer-content">
+          <!-- Sosial Media -->
+          <div class="footer-section">
+            <h4>Follow us on</h4> <br> <br>
+            <ul>
+              <li><i class="fab fa-instagram"></i> Instagram</li>
+              <li><i class="fab fa-facebook"></i> Facebook</li>
+              <li><i class="fab fa-tiktok"></i> Tiktok</li>
+            </ul>
+          </div>
+      
+          <!-- Produk -->
+          <div class="footer-section">
+            <h4>Product</h4> <br> <br>
+            <ul>
+              <li>Pembayaran Keseluruhan</li>
+              <li>Dashboard</li>
+              <li>Kategori</li>
+            </ul>
+            <div class="app-links">
+              <img src="gooplay1.png" alt="Google Play" />
+              <img src="appstore.png" alt="App Store" />
+            </div>
+          </div>
+      
+          <!-- Kontak -->
+          <div class="footer-section">
+            <h4>Contact</h4> <br> <br>
+            <ul class="ul">
+              <li><i class="fas fa-map-marker-alt"></i> Purbalingga</li> <br>
+              <li><i class="fab fa-whatsapp"></i> +62 123-4567-890</li> <br>
+              <li><i class="fas fa-envelope"></i> sewamobil@gmail.com</li> <br>
+            </ul>
+          </div>
+        </div>
+      
+        <div class="footer-bottom">
+          <p>Copyright © 2025 Bagas-Yasykur</p>
+        </div>
+      </footer>
+
 </body>
 </html>

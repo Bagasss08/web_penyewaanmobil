@@ -32,6 +32,12 @@ body {
     color: white;
     position: relative;
   }
+
+  .car-card img {
+    width: 200px;
+    height: auto;
+    border-radius: 5px;
+  }
   
   header {
     display: flex;
@@ -214,7 +220,7 @@ nav ul li a {
     border-radius: 10px;
 }
 
-footer {
+/* footer {
     background-color: #7FAFFF; 
     padding: 20px 0;
 }
@@ -252,4 +258,71 @@ footer {
     margin: 0 10px;
     text-decoration: none;
     color: white;
+} */
+
+.footer {
+  background-color: #7fafff;
+  width: 100%;
+  padding: 20px 0;
+  color: #000;
+  font-family: Arial, sans-serif;
+}
+
+.footer-content {
+  max-width: 1200px;
+margin: 0 auto;
+padding: 0 20px;
+color: white;
+display: flex;
+justify-content: space-between;
+
+}
+
+.footer-section {
+  list-style-type: none;
+  width: 30%;
+  min-width: 200px;
+}
+
+.footer-section h4 {
+  margin-bottom: 10px;
+}
+
+.footer-section ul {
+  list-style-type: none;
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section li {
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.footer-section i {
+  margin-right: 8px;
+}
+
+.app-links {
+  margin-top: 15px;
+}
+
+.app-links img {
+  width: 120px;
+  margin: 5px 10px 0 0;
+  border-radius: 5px;
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 13px;
+  margin-top: 20px;
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
